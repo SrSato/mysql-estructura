@@ -1,10 +1,3 @@
--- MySQL Workbench Synchronization
--- Generated: 2021-01-27 13:41
--- Model: New Model
--- Version: 1.0
--- Project: Name of the project
--- Author: sato
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
