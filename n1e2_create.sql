@@ -1,3 +1,10 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2021-02-02 11:21
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: sato
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
@@ -100,7 +107,7 @@ DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `pizzeria`.`pedidos` (
   `pedidos_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `pedidos_fecha` DATE NOT NULL,
+  `pedidos_fecha` DATETIME NOT NULL,
   `pedidos_tipo` VARCHAR(1) NOT NULL COMMENT 'Tipo de pedido. Valores: A- Entrega en domicilio, B-Recogida en tienda.',
   `pedidos_num` INT(11) NOT NULL COMMENT 'Cantidad de productos. Debería ser un campo autocalculado.',
   `pedidos_total` DECIMAL(6,2) NOT NULL COMMENT 'Precio total del pedido. Debería ser un campo autocalculado. Valor max: 9999.99',
@@ -130,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `pizzeria`.`productos` (
   `productos_des` MEDIUMTEXT NOT NULL COMMENT 'Descripción del producto.',
   `productos_img` VARCHAR(45) NOT NULL COMMENT 'URL de la imagen del producto.',
   `productos_precio` DECIMAL(4,2) NOT NULL COMMENT 'Precio del producto. Valor max: 99.99',
-  `categorias_categorias_id` INT(11) NOT NULL,
+  `categorias_categorias_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`productos_id`),
   UNIQUE INDEX `productos_id_UNIQUE` (`productos_id` ASC),
   INDEX `fk_productos_categorias1_idx` (`categorias_categorias_id` ASC),
